@@ -1,0 +1,32 @@
+<section class="vh-100">
+    <div class="container mt-5 bg-gray ">
+        <div class="row ">
+            <div class="col-md-12">
+                <a (click)="back()">
+                   <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    View all users
+              </a>
+            </div>
+         
+        </div>
+        <div class="row  d-flex align-items-center justify-content-center  mt-5">
+            <div class="col-md-5 m-auto" >
+                <mat-card class="example-card p-3" >
+                    <mat-card-header>
+                        <mat-card-title-group>
+                            <mat-card-title class="mb-3"> First Name : {{userData.data.first_name}}</mat-card-title>
+                            <mat-card-subtitle class="mb-3">Last Name :{{userData.data.last_name}}</mat-card-subtitle>
+                            <mat-card-subtitle class="mb-3">Email :{{userData.data.email}}</mat-card-subtitle>
+                            <img mat-card-md-image [src]="userData.data.avatar">
+                        </mat-card-title-group>
+                    </mat-card-header>
+                    <mat-card-content>
+    
+                    </mat-card-content>
+                </mat-card>
+    
+            </div>
+        </div>
+    </div>
+</section>
+
