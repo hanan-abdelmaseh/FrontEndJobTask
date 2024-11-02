@@ -9,18 +9,19 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Code structure 
 Core
-  -- interceptors
+|__interceptors
+
 Dashboard 
-   -- user Module
-       user component
-       components
-          -- not -found
-          -- user details
-        models
-        services
+|__user Module
+    |_____user component
+    |_____components
+    |     |____not -found
+    |     |____user details
+    |_____models
+    |_____services
 ## packages
-  -- Bootstrap
-  -- Angular Material
-  -- Font Awesome
-  -- ngx spinner 
+  |__Bootstrap
+  |__Angular Material
+  |__Font Awesome
+  |__ngx spinner 
 
