@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from './services/user.service';
 import { User, UserData } from './Models/user.model';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -22,8 +23,9 @@ export class UserComponent  implements OnInit{
     //per_page: this.per_page
 
   }
-
-  constructor(private _userService:UserService){
+  listView:boolean=false;
+  cardsView:boolean= true;
+  constructor(private _userService:UserService , private _Router:Router){
 
   }
   ngOnInit(): void {
@@ -50,12 +52,13 @@ export class UserComponent  implements OnInit{
   filtetByName(searchValue: HTMLInputElement) {
    if(searchValue){
       this.userData= this.userData.filter(name=> name.first_name.includes(searchValue.value))
-      
+      this.totalCount= this.userData.length
   }
 }
 filtetById(searchValue: HTMLInputElement){
   if(searchValue){
     this.userData= this.userData.filter(i=> i.id === parseInt( searchValue.value));
+    this.totalCount= this.userData.length
     
 }
 }
@@ -65,7 +68,19 @@ filtetById(searchValue: HTMLInputElement){
   //this.params.per_page = e.pageSize;
   this.getAllUsers();
 }
-
-
+//
+view(id:number){
+  this._Router.navigateByUrl(`/users/${id}`);
+}
+ //View as list
+  viewList(){
+    this.listView = true;
+    this.cardsView= false;
+  }
+  //View as cards
+  viewCards(){
+    this.listView = false;
+    this.cardsView= true;
+  }
 
 }
